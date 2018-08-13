@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html>
+<head>
+     <title>New Age African Migration, Consequences and Beyond</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content=" by Roseline Batcha. August 2018." />
+    <meta name="Keywords" content="Data visualisation, map, african migration, d3, Africa's Aid, migration, Africa, World" />
+    <link rel="shortcut icon" href="img/headerLogo.PNG"/>
+    <meta name="author" content="Roseline Batcha" />
+
+    <script type="text/javascript" src="lib/jquery-3.0.0.min.js"></script>
+
+<!-- uikit -->
+<!-- Note, load jquery first, always include a css and js for each component used, .min and .almost-flat -->
+
+    <!-- CSS -->
+    <link type="text/css" rel="stylesheet" href="lib/uikit-2.26.3/css/uikit.almost-flat.css" />
+    <link type="text/css" rel="stylesheet" href="lib/uikit-2.26.3/css/components/sticky.almost-flat.min.css" />
+    <link type="text/css" rel="stylesheet" href="lib/main.css"/>
+
+
+    <!-- JS -->
+    <script type="text/javascript" src="lib/uikit-2.26.3/js/uikit.min.js"></script>
+    <script type="text/javascript" src="lib/uikit-2.26.3/js/components/sticky.min.js"></script>
+
+<!-- D3 scripts -->
+    <script type="text/javascript" src='lib/d3-4.1.0/d3.min.js' charset="utf-8"></script>
+    <script type="text/javascript" src='lib/d3-4.1.0/d3.v3.min.js' charset="utf-8"></script>
+
+    <script type="text/javascript" src='lib/topojson.v1.min.js'></script>
+    <script type="text/javascript" src='lib/queue.v1.min.js'></script>
+
+</head>
+<body>
+<!-- Navigation menu - for large screen -->
+    <nav class="uk-navbar" data-uk-sticky="{clsactive: 'uk-navbar-attached', top: -100, animation: 'uk-animation-slide-top'}"> 
+        <a href="" target="blank"> <img class="uk-margin-large-left" src="img/logo.png" width="150px"></a>
+        <div class="uk-navbar-flip">
+            <ul class="uk-navbar-nav uk-hidden-small" data-uk-scrollspy-nav="{closest: 'li', smoothscroll: {offset: 50}}">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#backgound">Who's Behind Scenes</a></li>
+                <li><a href="#data">Data - Map Generation</a></li>
+                <li><a href="#realstories">Real Stories</a></li>
+                <li><a href="#references">References</a></li>
+                <li><a href="#learn">Contact - Lets Do This!</a></li>
+            </ul>
+        <a href="#offcanvas" class="uk-navbar-toggle uk-hidden-medium uk-hidden-large" data-uk-offcanvas></a>
+
+     </div>
+    </nav>
+
+ <!--    Navigation menu - for small screen -->
+
+    <div id="offcanvas" class="uk-offcanvas">
+        <div class="uk-offcanvas-bar">
+            <ul class="uk-nav uk-nav-offcanvas" >
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#backgound">Who's Behind Scenes</a></li>
+                <li><a href="#data">Data - Map Generation</a></li>
+                <li><a href="#realstories">Real Stories</a></li>
+                  <li><a href="#references">References</a></li>
+
+            </ul>
+        </div>
+    </div>
+
+<!--  Navigation menu for exit this site -->
+    <a id="exitnav" data-uk-sticky="{animation: 'uk-animation-slide-top'}" href="https://github.com/rbatcha">EXIT</a>
+
+    <div class="uk-panel uk-width-1-1">
+        <img src="img/brainDrain.png" width="100%">
+        <figcaption class="uk-overlay-panel uk-overlay-backgound uk-flex uk-flex-center uk-flex-middle uk-text-center">
+                <div class="uk-flex-middle uk-text-center">
+                    <h1>New Age African Migration </h1>
+                    <h2>About this project</h2>
+                    <h3> <a href="#start" data-uk-smooth-scroll><i class="uk-icon-chevron-circle-down uk-icon-large"></i></a></h3>
+                </div>
+            </figcaption>
+        
+    </div>
+
+
+
+    <div id="start" class="uk-container uk-container-center uk-width-medium-8-10 uk-width-small-1-1">
+
+         <div class="uk-panel uk-panel-box uk-width-medium-7-10 uk-margin-large-top uk-container-center" style="background: #d8de3a;">
+                <p>Make Your Voices Heard ! Contact  <a href="mailto:roselinebatcha@gmail.com">Roseline Batcha</a> and bounce back ideas, taking this campaign to a higher level. Be an Ambassador for Change  </p>
+        </div>
+
+        <h1 id="backgound" class="uk-text-center uk-margin-large-top uk-margin-large-bottom">Behind Scenes</h1>
+        <h2 id="contact" class="uk-margin-large-top">
+        Who is behind this project and how can I make an impact?
+        </h2>
+        <p class="uk-margin-top">This Mobile Web friendly Map Application has been created by Roseline Batcha, 
+		as her practicum project for Masters in GIS and Web Map Programming at the University of Wisconsin Madison. </p>
+        <p>
+        For further information about this specific project you can contact me @ <a href="mailto:roselinebatcha@gmail.com">Roseline Batcha</a> or follow 
+		<a href="https://twitter.com/batcharose" target="blank">@batcharose</a> on Twitter.
+        </p>
+        
+        <h2 class="uk-margin-large-top">
+        Can I share these maps?
+        </h2>
+        <p class="uk-margin-top">
+        Yes. This map has been designed, to the best of my knowledge, and all data used comes from free and open sources. Please share the project with all those who may be interested, feel inclined... and lets together make an impact!
+        </p>
+
+        <div class="uk-wdith-1-1 uk-margin-top uk-margin-right uk-margin-bottom">
+            <h3 class="uk-margin-large-top uk-margin-bottom">
+                <a href="https://twitter.com/share" class="uk-icon-twitter uk-icon-large" data-size="large" data-text="" data-url="" data-show-count="false"></a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+               OR follow <a href="https://twitter.com/batcharose" target="blank">@batcharose</a> on Twitter. Email me for more @ <a href="mailto:roselinebatcha@gmail.com">Roseline Batcha</a>
+        
+                
+            </h3>
+
+        </div>
+
+        <h2 class="uk-margin-large-top">
+        Copying or Re-publishing the Maps?
+        </h2>
+        <p class="uk-margin-top">
+         You can copy and re-publish all materials used within this Application. Its part of the open source development project. Thank You, and remember to give attributions!
+        </p>
+
+        <h2 class="uk-margin-large-top">
+        How is the map created and can I re-use the code?
+        </h2>
+        <p class="uk-margin-top">
+        This map has been created using Leaflet, Open street Maps and JScript libraries. The Graphs created using <a href="https://d3js.org/" target="blank">D3.js</a>, an open-source JavaScript coding library for data visualisation.
+		All code can be found in my Portfolio on <a href="https://github.com/rbatcha" target="blank"> Github </a> and is licenced under a 
+		<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>. 
+		
+        </p>
+        
+        <h2 class="uk-margin-large-top" id="data">
+        Where does the data come from?
+        </h2>
+        <p>
+        The data has been collected from a range of sources (see <a href="#references" data-uk-smooth-scroll>map notes and references</a> below) 
+		If you have any concerns at all about the data or its use, please contact <a href="mailto:rbatcha@wisc.edu">Roseline Batcha</a>  
+        </p>
+        <h2 class="uk-margin-large-top">
+       Are the rights and anonymity of those in the real stories and images protected ?
+        </h2>
+        <p>
+       All material used in the development of this project is got free online and all open source materials.
+		For further detail please see the <a href="#references" data-uk-smooth-scroll>map notes and references</a>.
+        </p>
+        
+         
+
+    </div>
+
+        <div class="uk-container uk-container-center uk-width-1-1 uk-margin-top uk-block">
+            <h2 id="realstories" class="uk-text-center uk-margin-top uk-margin-large-bottom">Real Stories and Hard Facts</h2>
+
+            <div class="uk-grid uk-grid-small uk-container-center uk-text-center uk-margin-large-top uk-width-medium-8-10 uk-width-small-1-1" data-uk-grid-match="{target:'.uk-panel'}">
+                             <div class="uk-width-medium-1-5">
+                                    <div class="uk-panel uk-panel-box uk-panel-box-primary uk-panel-hover">
+                                        <a data-uk-modal="{target:'#refugeDefinition'}">African Brain Drain Effect</a>
+                                    </div>
+                                </div>
+
+                               <div class="uk-width-medium-1-5">
+                                    <div class="uk-panel uk-panel-box uk-panel-box-primary uk-panel-hover">
+                                         <a data-uk-modal="{target:'#ndvhDefinition'}"> Mass Migration of African Doctors  </a>
+                                    </div>
+                                </div>
+                                <div class="uk-width-medium-1-5">
+                                    <div class="uk-panel uk-panel-box uk-panel-box-primary uk-panel-hover">
+                                        <a data-uk-modal="{target:'#arrivingDefintion'}">Tertiary Students Abroad</a>
+                                    </div>
+                                </div>
+                                <div class="uk-width-medium-1-5">
+                                    <div class="uk-panel uk-panel-box uk-panel-box-primary uk-panel-hover">
+                                          <a data-uk-modal="{target:'#leavingDefinition'}">Stories from seeking greener pastures Abroad</a>
+                                    </div>
+                                </div>
+                                <div class="uk-width-medium-1-5">
+                                    <div class="uk-panel uk-panel-box uk-panel-box-primary uk-panel-hover">
+                                        <a data-uk-modal="{target:'#migrationDefintion'}">Africa's Brain Drain to Brain Gain</a>
+                                    </div>
+                                </div>
+
+                </div>
+        </div>
+
+
+    <div class="uk-container uk-container-center uk-width-medium-8-10 uk-width-small-1-1 uk-margin-large-top">
+
+        <h2 class="uk-margin-large-top">
+        What rationale underpins this Web- Mobile App Development?
+        </h2>
+        <p>
+        This is a GIS and Web Map Programming project, that brings together GIS, data visualisation and digital web technologies with social Geography concerns,
+		to enable new ways of viewing New Age African Migration as a social issue while campaigning for change. 
+		This project seeks inputs from gamechangers, and any form of collaboration to gain attention from policy makers, 
+		educators, and global citizens, mostly Western countries to change their views and exploitation of the brains from Africa and to re-value, 
+		re-credit the cost – efficient undeniable contributions Africans make in the Diaspora.
+		It is also time for Africans to have a re-think and Strategy in place to re-address the brain-drain dilemma and 
+		put in place measures to benefit more by converting brain drain to brain gain.</p>
+		<p>
+		This project is primarily technical in nature and forcuses on identifying the most effective ways to visualise movements spatially. 
+		It is also framed to allow users to exlore and understand the data, to interpret specific conclusions from this.
+		It also targets giving the user a cue in, into the visuals, so they can better relate to the migration dilemma.
+
+        </p>
+        <p>
+        Users exploring my App, its interactive and animated map, charts and rich narratives and case studies, will have as goals of gleaning in on the extent of IN/OUT migration from Africa, the raison d’etre, consequences and beyond the present status quo
+The map interface displays animated movements from Africa and the world, the charts or graphs provide cues to percentages and comparisons to peculiar case study progressions on tertiary and non-tertiary migrant trends.
+The narrative is based on real stories and insights on possible gains of brain drain, brain gain effect on Africa.
+
+<p>
+Another pointer as to why you should promote my Application is that,
+the more we have rich interactive visuals and informative stories on the World Wide Web, 
+the better we can re-paint and re-create the African Migration Story. 
+Such that it will be a win-win scenario for Africa and the rest of the WSorld.
+
+        </p>
+        <p>
+-	What do Africans need most when it comes to reversing brain drain to brain gain?
+-	How also, can Africans challenge the western countries to re-value and credit better the brain drains from Africa??
+</p>
+<p>
+To the rest of the world, You need Africa and Africa needs you.
+Isn’t it time for all global citizens to re-value and re-credit one another??
+</p>
+<p>
+Join me in promoting my App that will help re-create a future fair enough for Africa and the rest of the World!
+</p>
+        <h2 class="uk-margin-large-top" id="references">
+        References
+        </h2>
+        <p>Specific references used within this website include:
+            <ul>
+                <li> Alburo, Florian, and Danilo Abella. 2002. "Skilled Labour Migration from Developing Countries: Study on the Philippines." International Migration Papers 51, Geneva: ILO.<a href="http://http://www.ilo.org/global/topics/labour-migration/lang--en/index.htm" target="blank">Available online.</a></li>
+                
+                <li> Commander, Simon, Rupa Chanda, Mari Kangasniemi, and Alan Winters.2004. "Must Skilled Migration Be a Brain Drain? Evidence from the Indian Software Industry." IZA Discussion Paper No. 1422, Bonn: Institute for the Study of Labour (IZA)<a href="http://ftp://repec.iza.org/RePEc/Discussionpaper/dp1422.pdf" target="blank">Available online.</a></li>
+                               
+                <li> World Migration and Remittances Data <a href="-	http://www.worldbank.org/en/topic/migrationremittancesdiasporaissues/brief/migration-remittances-data" target="blank">Available online</a>.</li>
+
+                <li>Migration Data Portal
+                <a href="-	https://migrationdataportal.org/?i=stock_abs_&t=2010" target="blank">Available online</a>.
+                </li>
+                <li> African Immigration to Europe, Boston Archives <a href="http://archive.boston.com/bigpicture/2009/01/african_immigration_to_europe.html" target="blank">Available online.</a></li>
+                <li> Department of Homeland Security, Yearbook of Immigration Statistics, accessed August 4, 20 10
+                <a href="http://www.dhs.gov/ftles/statistics/publications/yearbook,shtm," target="blank" target="blank"> Available online</a>.
+                </li>
+
+                 <li>World Migration Information <a href="http://www.iom-nederland.nl/nl/" target="blank">Available online</a> </li>
+                
+                <li> Free pictures <a href="-	https://pixabay.com/en/photos/migration/" target="blank">Available online</a>.</li>
+            </ul>
+       
+        
+        <h2>
+        Privacy and cookies policy
+        </h2>
+        <p>
+            This site uses cookies and Google Analytics to collect non-identifying information about the use of this site. A cookie is a small file that is sent to your computer or mobile phone that lets us know that you have visited the website before. Cookies collect information in an anonymous form.
+			We view this information in reports (provided by Google Analytics) so we can see how well the website is working.
+          </p>
+        <h2>
+        Attributions
+        </h2>
+        <p>
+       Thanks to leaflet |                    
+     <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'|
+            
+         <a href="https://migrationdataportal.org/data?i=stock_abs_&t=2017" target="blank"> Migration Data Portal 2017</a>   |
+             <a href="https://github.com/rbatcha">Roseline Batcha</a>'|   
+            
+    </div>
+
+  <div id="learn" class="uk-container-center uk-margin-top uk-block uk-block-muted">
+    <div class="uk-container-center uk-margin-top uk-margin-right uk-width-medium-1-1">
+        <h1 class="uk-text-center uk-margin-top">Contact - Lets Do This!</h1>
+            <p class="uk-text-left uk-text-large uk-margin-large-top uk-text-center">
+            To find out more about this project and how we can take it to another level and scale.  
+		
+			<a href="https://twitter.com/share" class="uk-icon-twitter uk-icon-large" data-size="large" data-text="" data-url="" data-show-count="false"></a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+           
+			 or follow <a href="https://twitter.com/batcharose" target="blank">@batcharose</a> on Twitter and share this project. Email me with more and for more @ <a href="mailto:roselinebatcha@gmail.com">Roseline Batcha</a>
+			   </p>
+			
+        
+        <h3 class="uk-text-center uk-margin-large-top"><a href="#intro" data-uk-smooth-scroll><i class="uk-icon-chevron-circle-up uk-icon-large"></i></a></h3>
+        <p class="uk-text-center">Back to the top</p>
+    </div>
+</div>
+    
+        <!-- Logo -->
+
+  <div class="uk-width-1-1 uk-margin-large-top uk-margin-right uk-margin-bottom">
+<!--         <h3 class="uk-text-center"><a href="#intro" data-uk-smooth-scroll><i class="uk-icon-chevron-circle-up uk-icon-large"></i></a></h3> -->
+        <p class="uk-text-center"><!-- Back to the top --></p>
+    </div>
+ 
+
+
+<!-- <a data-uk-modal="{target:'.refuge'}"> refuge</a> -->
+        <a href=".refugeDefinition" data-uk-modal></a>
+            <div id="refugeDefinition" class="uk-modal refuge">
+                <div class="uk-modal-dialog">
+                    <h1>African Brain Drain Effect <a href="" class="uk-modal-close uk-close uk-align-right uk-margin-top uk-margin-right"></a></h1>
+                <p>
+                    More than a decade ago, U.S. presidential candidate Ross Perot talked about the "giant sucking sound" made as American jobs went south of the border. These days, there is a far more significant sucking sound, one that concerns the whole world and one that could impede collective efforts to make poverty history. That new sucking sound is being made by highly skilled people leaving developing countries and heading to the developed world. 
+                </p>
+                    <p>
+                   The scale of this "brain drain" is staggering. As demographer B. Lindsay Lowell and geographers Allan Findlay and Emma Stewart point out in their research, nearly one in 10 tertiary-educated adults (those with some university or post-secondary schooling) born in the developing world — between a third and half of the developing world's science and technology personnel — now live in the developed world. With demand for skilled workers in the developed world unlikely to diminish soon, that sucking sound is likely to get louder.
+                </p>
+                    <a href="" target="blank"> <img class="uk-margin-large-left" src="img/brainDrain.png" width="500px"></a>
+                    <p>
+                    e implications for poor sending countries are stark. According to the African Capacity Building Foundation, African countries lose 20,000 skilled personnel to the developed world every year. All the developed world's efforts to increase aid to these countries may not matter if the local personnel required to implement development programs are absent. Every year there are 20,000 fewer people in Africa to deliver key public services, drive economic growth, and articulate calls for greater democracy and development. 
+                </p>
+                    <p>
+                    That something needs to be done about brain drain is not in question. G8 leaders have discussed the issue, the UK's Commission on Africa calls for better responses, and unions, development agencies, and other civil-society groups are demanding action. 
+                </p>
+                    <p>
+                    The key question is what should be done. The intuitive response — and one that is most frequently aired — is to try to plug the drain. Stemming the flows seems to make sense: the departure of these key workers hurts the sending countries, so reducing the scale of emigration should ease the pain. 
+                </p>
+                    <p>
+                   However, seeking to limit mobility may not be the most efficient or humane way to tackle the problem. Indeed, the very notion of "brain drain" may be outdated and simplistic, wrongly implying that the impacts of the movement of highly skilled people are always and everywhere a bad thing. 
+                </p>
+                    <p>
+                   Instead, what is needed are better methodologies to assess the net impacts of migration — including but not limited to the impacts of brain drain — as well as more nuanced policies that target particular problems where and when they arise. One-size-fits-all measures aimed at limiting mobility from particular regions or countries could end up inhibiting development, not to mention curbing the rights of would-be migrants.
+                </p>
+                    <p>
+                    Moreover, there is a need to devise measures that recognize that greater mobility, not less mobility, is likely to be the most sustainable and efficient response over the long term. However, this approach presents an immense challenge: how to tap into the immense economic and other benefits migration can deliver for individuals and receiving countries, while simultaneously ensuring that sending countries also benefit. 
+                </p>
+                <p>
+                    Brain Drain Is Not Always Negative 
+                    </p>
+                    <p> <a href="" target="blank"> <img class="uk-margin-large-left" src="img/logo.PNG" width="250px"></a>
+                </p>
+                    
+                
+                </div>
+            </div>
+
+
+        <div id="ndvhDefinition" class="uk-modal">
+            <div class="uk-modal-dialog">
+                <a class="uk-modal-close uk-close"></a>
+
+                <h1>Mass Migration of African Doctors</h1>
+                <p>
+                   Migration of health professionals has been a cause for global concern, in particular migration from African countries with a high disease burden and already fragile health systems. An estimated one fifth of African-born physicians are working in high-income countries. Lack of good data makes it difficult to determine what constitutes “African” physicians, as most studies do not distinguish between their country of citizenship and country of training. Thus, the real extent of migration from African countries to the United States (US) remains unclear.
+                </p>
+                 <a href="" target="blank"> <img class="uk-margin-large-left" src="img/doctorsBrainDrain.PNG" width="500px"></a>
+                <p>
+                    
+The outflow of African-educated physicians to the US has increased over the past 10 years, from 10 684 in 2005 to 13 584 in 2015 (27.1% increase). This represents 5.9% of all international medical graduates in the US workforce in 2015. The number of African-educated physicians who graduated from medical schools in sub-Saharan countries was 2014 in 2005 and 8150 in 2015 (304.6% increase). It is found four distinct categorizations of African-trained physicians migrating to the US: (1) citizens from an African country who attended medical school in their own country (86.2%, n = 11,697); (2) citizens from an African country who attended medical school in another African country (2.3%, n = 317); (3) US citizens who attended medical school in an African country (4.0%, n = 537); (4) citizens from a country outside Africa, and other than the United States, who attended medical school in an African country (7.5%, n = 1013). Overall, six schools in Africa provided half of all African-educated physicians.
+                </p>   
+                 <p>
+                    The number of African-educated physicians in the US has increased over the past 10 years. We have distinguished four migration patterns, based on citizenship and country of medical school. The majority of African graduates come to the US from relatively few countries, and from a limited number of medical schools. A proportion are not citizens of the country where they attended medical school, highlighting the internationalization of medical education. 
+                      <a href="" target="blank"> <img class="uk-margin-large-left" src="img/logo.PNG" width="250px"></a>
+                </p>
+            </div>
+        </div>
+
+
+        <div id="arrivingDefintion" class="uk-modal">
+            <div class="uk-modal-dialog">
+                <a class="uk-modal-close uk-close"></a>
+
+                <h1>Tertiary Students Abroad</h1>
+                <p>
+                    More than ten million Africans now constitute an invisible nation that resides outside Africa. Although invisible, it is a nation as populous as Angola, Malawi, Zambia or Zimbabwe. If it were to be a nation with distinct borders, it would have an income roughly equivalent to Africa's gross domestic product. Although the African Union does not recognize the African Diaspora as a nation, the International Monetary Fund (IMF) acknowledges its economic importance. The IMF estimates the African Diaspora now constitutes the biggest group of foreign investors in Africa. What few realize is that Africans who immigrate to the United States contribute 40 times more wealth to the American than to the African economy. According to the United Nations, an African professional working in the United States contributes about $150,000 per year to the U.S. economy.
+                </p>
+                <p> “brain drain” concerns?</p>
+                 <a href="" target="blank"> <img class="uk-margin-large-left" src="img/brainGain.PNG" width="150px"></a>
+                 <p>
+                    Third-level students from sub-Saharan Africa are the most mobile in the world,
+with one out of every 16 studying abroad, according to a report from the UNESCO
+Institute for Statistics (UIS).
+“What this report shows is that the real dynamic in tertiary education is coming
+from African, Arab and Chinese students. They are the driving force behind the
+internationalization of higher education,” says Hendrik van der Pol, UIS Director.
+Between 1999 and 2004, the number of mobile students worldwide surged by
+41 percent from 1.75 to 2.5 million. This does not mean that more students are
+travelling, rather it reflects the rapid expansion of higher education itself, with
+tertiary enrolments also increasing by about 40 percent during the same period.
+Six countries host 67 percent of the world’s mobile students: with 23 per cent
+studying in the United States, followed by the United Kingdom (12 per cent), Germany
+(11 per cent), France (10 per cent), Australia (7 per cent) and Japan (5 per cent).
+                </p>
+                <p>
+                    There is no doubt that there is a global competition for the best minds, the most talented and best trained people. We see it happening even in sports where, in soccer, for instance, some of the best players in the world are highly sought after by rich club-sides in Europe and elsewhere; Nigeria alone, currently contributes at least 20 world class soccer players to this elite group of international professionals currently engaged by foreign teams. And what the Third World loses the developed world gains.
+                </p> 
+                <p>
+                    There is no doubt also that, given the opportunity, workers will move from areas with relatively adverse work conditions and lower value for their services to areas where they can get the most for those services. In this era of globalization, such opportunities have been increasingly available to professionals and other workers.
+                </p> 
+                <p>
+                    Is brain drain inevitable? The UN Economic
+Commission for Africa and the International Organization for Migration warn that, in the future, it may become even tougher to keep skilled professionals in developing countries.
+With falling birth rates and aging populations, demand for labour in Northern countries is expected to grow. And in a globalizing world which promotes the free movement of capital, it will be difficult to restrict the free movement of skilled labour.
+                </p> 
+                <p>
+                    The challenge for policymakers is to find
+innovative strategies to face these harsh realities. They can continue to use ICT to build capacity, especially in the universities.
+Most of all, governments should liberate the potential of their diaspora communities and enable them to play a meaningful role in their countries’ development.
+                </p> 
+   <a href="" target="blank"> <img class="uk-margin-large-left" src="img/logo.png" width="150px"></a>            
+            </div>
+        </div>
+
+        <div id="leavingDefinition" class="uk-modal">
+            <div class="uk-modal-dialog">
+                <a class="uk-modal-close uk-close"></a>
+
+                <h1>Stories from seeking greener pastures Abroad</h1>
+                <p>
+                    Facts on brain drain are either hard to find or old. But one thing remains clear: those who can travel will do so to expand their professional horizons. The question is whether they return and share their experiences.
+                </p>
+                <a href="" target="blank"> <img class="uk-margin-large-left" src="img/logo.png" width="150px"></a>
+                <p>
+                    If you're fortunate enough to have access to a good education, whatever your financial background or country, there's a good chance it will open your eyes to worlds beyond. And it stands to reason that if you get that education and have a little cash left over, you will want to explore some of those new worlds up close.
+                </p>
+                <p>
+                    Over the years it has happened a lot. A UNESCO Science Report "Towards 2030" cites brain drain as still being an issue for some countries, like Burkina Faso in West Africa. But this is not the complete picture
+                </p>
+                <p>
+                    There are many reasons for leaving. For some it might be financial prospects. And for others, like Abayomi Ogunjimi, "it was knowledge."
+
+"I need new ideas, new ways of doing things and I need to fit myself in this broad landscape of science to get something done in my country after," says Ogunjimi. He's a PhD student from Nigeria, currently with the University of Sao Paulo in Brazil.  
+                </p>
+                <p>As Ogunjimi's outlook suggests, brain drain is no longer a one-way trip. It can be a round-trip, and some just don't feel the need to leave for an education at all.</p>
+                <p>"Returnees are today playing a key role in STI [science, technology, innovation] policy formulation, economic development … even those who remain abroad are contributing," write the report's authors. </p>
+                
+                  <p> Brain circulation</p> 
+
+<p>So we've gone from brain drain to brain (re)gain, and today we're seeing a "brain circulation." Some countries, like Sudan, that previous suffered from brain drain are now even attracting researchers. Or take Kenya: its plans for a Silicon Savannah could soon be a major draw card for the country. 
+
+All these developments rely on returnees bringing back expertise from across the sciences - and not only that, it's their local knowledge that counts as well. But sometimes it's precisely that knowledge that slows your return.
+                </p>
+                <p>
+                    "It's often difficult when you go back because there's nothing to work with," says Ogunjimi. "I plan to go back because I have a position at the university, but I'm already seeing challenges, like funding, facilities, government policies."
+
+Ogunjimi focuses on pharmaceuticals, researching drug delivery and nano technology. And he will always keep the door open with a view on the world outside Nigeria.
+
+"If I get funding and can do some good research, I'll stay. But if not, I'll move out," Ogunjimi says. 
+                </p>
+                <a href="" target="blank"> <img class="uk-margin-large-left" src="img/testimonial1.PNG" width="400px"></a> 
+                <p>
+                <h2>Inspired by the problems at home</h2>  <p>
+
+It seems young scientists from Africa are often inspired by those very problems, which they know all too well at home.
+
+Vision Bagonza was selected for a position at the National Medical School in Tanzania, but she felt a need to get out into the world.
+
+"I knew that a lot of the problems I was seeing in my village would not be solved by just a medical education, so I traveled and I found what I was looking for," says Bagonza, who has just graduated from the Augsburg College in Minneapolis, USA.
+                </p>
+                <p>
+                    Bagonza also plans to return home, but says the solution to her country's problems will take more than that.</p>
+         <a href="" target="blank"> <img class="uk-margin-large-left" src="img/testimonial2.PNG" width="400px"></a>        
+                <p>
+         <h2>Awareness everywhere</h2>  <p>
+                  Don't forget, though, whether the scientists return or not, they can have their own educational impact in the countries they adopt. By sharing their stories in America, Brazil, Europe or Australia, local science communities there will surely gain some new brains and understanding themselves about lives and issues in Africa. Perhaps if more people had access to such exchanges, it would reduce the risk of western populations failing to act, or act fast enough, when diseases like Ebola break out.
+                </p>
+                 <p>
+                  "Well, we live in a technological society, so it's really impossible to say you don't know what's going on in the world," says Bagonza. "but the key thing that happens with exchanging scientists is seeing them as important humans that you should fight for until they can fight for themselves, or indeed fight with them."
+                </p>
+                <p>
+                And it is indeed a fight for Ogunjimi, a fight he says he will take to the top of his institute if he has to. Okay, so both his parents are educators and his father is a top ranking university professor, so he's got the walk to go with the talk. But, still, he concedes, "it is tough."
+                </p>
+                <p>
+         "I'm not proud when I ask about collaborations and facilities because I'm from Nigeria, and I know my government has the money," says Ogunjimi, "it can do more than this. But they just channel the money to something else."
+                </p>
+               
+                 <a href="" target="blank"> <img class="uk-margin-large-left" src="img/logo.png" width="150px"></a>
+                
+            </div>
+        </div>
+    
+        <div id="migrationDefintion" class="uk-modal">
+            <div class="uk-modal-dialog">
+                <a class="uk-modal-close uk-close"></a>
+
+                <h1>Africa's Brain Drain to Brain Gain</h1>
+                <p>
+                
+                   The fact that brain drain is not always, but can be a major problem in some sectors in African countries, presents at least two important challenges for research. 
+                </p>
+                 <a href="" target="blank"> <img class="uk-margin-large-left" src="img/brainGain.PNG" width="500px"></a>
+                <p>
+                    The first is to devise methodologies for differentiting between brain drain per se and a subset of cases that might best be termed "brain strain." The latter are cases in which the net outflow of highly skilled workers from a particular sector in a particular country is actually hampering or is very likely to hamper economic development or the pursuit of important socioeconomic goals.
+                </p>
+                <p>
+                    Identifying brain strain hotspots — particularly where brain drain is undermining efforts to attain Millenium Development Goals or achieve poverty reduction in the world's poorest countries — will be critical for policymakers in sending and receiving countries who seek appropriate interventions.
+                </p>
+                <p>
+                    There is preliminary evidence to suggest the importance of this distinction between brain drain and brain strain. Analysis by economists Simon Commander, Rupa Chanda, Mari Kangasniemi, and Alan Winters suggests that the emigration of IT workers from India is not necessarily having adverse impacts on India's development. Economist Florian Alburo and researcher Danilo Abella suggest that the emigration of skilled workers from the Philippines may not be as bad as many might expect.
+                </p>
+                <p>
+                   On the other hand, it is possible to identify places where brain strain may be occurring or is likely to occur. Small developing countries with high rates of emigration are likely to be particularly vulnerable.
+                </p>
+                <p>
+                   Recent OECD data suggest that around two-thirds of all highly skilled workers from countries such as Guyana, Jamaica, Haiti, Trinidad &amp; Tobago, and Fiji have also left these countries. The sheer volume of emigration suggests that any possible positive effects may be outweighed by negative impacts on economic dynamism, the delivery of key public services and the depletion of the political classes.
+                </p>
+                <p>
+                   In larger countries, the relative scale of loss may be much smaller, but particular sectors may be adversely affected. In this case, the departure of large numbers and proportions of health care workers from some sub-Saharan African countries comes to mind. 
+                </p>
+                <p>
+                    A second, and perhaps more important, challenge is to devise a more robust methodology for understanding the overall net impacts of migration. The rationale for why such a methodology is needed is clear: if brain strain occurs when the negative impacts of migration outweigh the positive impacts of migration, then finding a way of calculating these impacts is imperative. 
+                </p>
+                <p>
+                    Developing such a methodology will require a massive, multidisciplinary effort. It will entail the collection of considerable, context-specific evidence such as information on vacancy rates in key sectors, historical and comparative changes in the distribution of certain key workers (eg, teachers per 1,000 children), the size and nature of the sending economy, and the migration experience of those who leave (relative incomes, remittances, returnees). 
+                </p>
+                <p>
+                    This will involve quantitative as well as qualitative methodologies: modeling demand/growth in training for particular sectors, modeling the rate of growth in wages and conditions, and surveying migration and return intentions. It will rely as much on econometric methods for isolating migration's impacts — for instance, within the context of sub-Saharan Africa's HIV pandemic and health care systems — as on a broad understanding of the obstacles to economic development in the countries in question. 
+                </p>
+                <p>
+                    Such a model will also have to be complex, taking into account returns as well as new inflows and outflows of people. It will also need to be comparative and look at progress towards achieving key public policy targets, such as reducing mortality or increasing literacy in comparable cases where emigration has not been as important. And it will also need to be dynamic, examining current as well as future scenarios. 
+                </p>
+                <p>
+                   Indeed, the dual tasks of identifying cases of brain strain and calculating the overall impacts of migration are daunting to say the least. Nevertheless, such methodological innovations are a necessary first step in the quest for workable and effective policy interventions that can optimize the impacts of migration for all concerned. 
+                </p>
+                <p>
+                   Unless such methodologies are devised, policymakers risk doing more harm than good by restricting mobility in the name of countering brain drain, while ignoring the structural causes that are generating the pressures to emigrate. 
+                    <p>
+                    <a href="" target="blank"> <img class="uk-margin-large-left" src="img/logo.PNG" width="250px"></a> 
+                </p>
+            </div>
+        </div>
+<!-- Share on Facebook -->
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.7";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
+<!-- Google Analytics-->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-84854107-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</body>
+</html>
