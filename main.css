@@ -1,0 +1,861 @@
+
+/* Map features*/
+
+        #map {
+            background: #e6f9ff;
+            overflow: hidden;
+            width: 170%;
+/*            height: 100%;*/
+            left: -35%;
+            right:35%;
+
+            /* This is for the Map container to be a fixed ratio */
+            position: relative;
+            padding-bottom: 98%;
+            height: 0;
+        }
+        
+.legend {
+	        line-height: 20px;
+	        color: #333333;
+	        font-family: 'Open Sans', Helvetica, sans-serif;
+	        padding: 6px 8px;
+	        background: white;
+	        background: rgba(255,255,255,0.8);
+	        box-shadow: 0 0 15px rgba(0,0,0,0.2);
+	        border-radius: 5px;
+       
+    
+        }
+
+.title {
+    position: top;
+    z-index: 5000;
+    width: 120%;
+    height: 45px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 158px;
+    padding-right: 158px
+    color: whitesmoke;
+    background-color: black;
+    font: 14px arial,helvetica,sans-serif;
+    text-align: center;
+    
+}
+        /* http://www.mademyday.de/css-height-equals-width-with-pure-css.html */
+        /* This is for the SVG to fit the Map container */
+       
+/*Changes to UIKIT CSS to match styles */
+        .uk-button {
+            text-shadow: none;
+            font-weight: 300;
+            padding: 10px;
+            border-color: rgba(0, 0, 0, 0.16);
+            
+        }
+
+        .uk-navbar {
+            background: #ffffff;
+            border-color: rgba(0, 0, 0, 0.16);
+            z-index: 9999;
+            font-size: 15px;
+            font-family: 'Lato', sans-serif;
+            font-weight: 300;
+            letter-spacing: 0.025em;
+            line-height: 1.75em;
+            }
+
+        .uk-offcanvas-bar {
+            background: #ffffff;
+        }
+
+        .uk-navbar-attached {
+            background: #ffffff;
+        }
+        .uk-nav-offcanvas>li>a {
+            color: #444444;
+            padding: 10px 15px;
+            box-shadow: none;
+            text-shadow: none;
+            border-top: 1px solid rgba(229, 229, 229,.3);
+        }
+/*        change hover colour background and text color*/
+        .uk-nav-offcanvas>.uk-open>a, html:not(.uk-touch) .uk-nav-offcanvas>li>a:focus, html:not(.uk-touch) .uk-nav-offcanvas>li>a:hover {
+            background: none;
+            color: #e5e5e5;
+            outline: 0;
+        }
+
+        .uk-offcanvas-bar:after {
+            box-shadow: none;
+        }
+
+
+        h1 {
+            color: #25283D;
+        }
+
+        h2 {
+            color: #2d7d9e;
+        }
+
+#charts { background: #e6f9ff;
+            overflow: hidden;
+            width: 145%;
+ 
+            left: -20%;
+            right:35%;
+
+            /* This is for the Map container to be a fixed ratio */
+            position: relative;
+            padding-bottom: 58%;
+            height: 10;
+        }
+        
+}
+.axis path,
+.axis line, 
+.axis1 path,
+.axis1 line {
+  fill: none;
+  stroke: #E6E7E8;
+  shape-rendering: crispEdges;
+}
+
+.x.axis path, .x.axis1 path {
+  display: none;
+}
+
+.line {
+  fill: none;
+  stroke-width: 1.5px;
+}
+
+.legend-box {
+  cursor: pointer;  
+}
+
+#mouse-tracker {
+  stroke: #E6E7E8;
+  stroke-width: 1px;
+}
+
+.hover-line { 
+  stroke: #E6E7E8;
+  fill: none;
+  stroke-width: 1px;
+  left: 10px;
+  shape-rendering: crispEdges;
+  opacity: 1e-6;
+}
+
+.hover-text {
+  stroke: none;
+  font-size: 30px;
+  font-weight: bold;
+  fill: #000000;
+}
+
+.tooltip {
+  font-weight: normal;
+}
+
+.brush .extent {
+  stroke: #FFF;
+  shape-rendering: crispEdges;
+}
+
+
+
+
+@media (max-width: 479px) {
+
+        #exitnav {
+            position: fixed;
+            top: 30%;
+            left: 80%;
+            width: 20%;
+            z-index: 1000;
+            text-align: center;
+            font-weight: 500;
+            text-transform: uppercase;
+            background: #d8de3a;
+            transform: rotate(90deg);
+            transform-origin: right top 0;
+            font-size: 12px;
+            color: #444444;
+
+            line-height: 1.6em;
+            padding-top: 4px;
+            height: 2em;
+        }
+
+        #exitnav:hover,
+        #exitnav:focus {
+            background-color: #bec421;
+            border-color: rgba(0, 0, 0, 0.16);
+        }
+    
+    
+     
+
+    /*/////Infowindow CSS /////////////////////////////////////////////*/
+
+        .tooltip_text {
+            font: normal 12px / 16px 'Lato', sans-serif !important;
+            color: #25283D;
+        }
+
+        .chart_text {
+            font-size: 16px;
+            line-height: 20px;
+            background: none;
+            color: #25283D;
+        } 
+        .instruction {
+            font: normal 12px / 16px 'Lato', sans-serif !important;
+            color: #25283D;
+        }
+
+        .tooltip_heading {
+            font-size: 26px;
+            font-weight: 500;
+            line-height: 36px !important;
+            color: #25283D;
+        }
+
+        #allH1 {
+            color: #ffa902;
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 20px;
+            margin-top: 5px;
+        }
+
+        #arrivingH1 {
+            color: #b6006c;
+            font-size: 18px;
+            line-height: 36px;
+            font-weight: 500;
+        }
+
+        #leavingH1 {
+            color: #2D7D9E;
+            font-size: 18px;
+            line-height: 36px;
+            font-weight: 500;
+            margin-top: 5px;
+        }
+
+        #instructionAllH1 {
+            color: #ffa902;
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 46px;
+        }
+
+        #instructionArrivingH1 {
+            color: #b6006c;
+            font-size: 18px;
+            line-height: 46px;
+            font-weight: 500;
+        }
+
+        #instructionLeavingH1 {
+            color: #2D7D9E;
+            font-size: 18px;
+            line-height: 46px;
+            font-weight: 500;
+        }
+
+        #spaces {
+            color: #25283D;
+            font-size: 16px;
+            line-height: 18px;
+            font-weight: 500;
+        }
+
+        #helplinecalls {
+            color: #25283D;
+            font-size: 16px;
+            line-height: 28px;
+            font-weight: 500;
+        }
+
+        #arriving {
+            color: #b6006c;
+            font-size: 16px;
+            line-height: 18px;
+            font-weight: 500;
+        }
+
+
+        #leaving {
+            color: #2D7D9E;
+            font-size: 16px;
+            line-height: 18px;
+            font-weight: 500;
+        }
+
+
+        #astrix {
+            margin-top: 5px;
+            line-height: 15px;
+            font-size: 10px;
+
+        }
+        #astrix2 {
+            line-height: 15px;
+            font-size: 10px;
+        }
+
+        #leavingAstrix {
+            color: #2D7D9E;
+            font-size: 16px;
+        }
+
+        #arrivingAstrix {
+            color: #b6006c;
+            font-size: 16px;
+        }
+
+        #in {
+            font-color: #b6006c;
+            fill: #b6006c;
+        }
+
+        .uk-button {
+            font-size: 14px;
+        }
+
+
+}
+
+
+@media (min-width: 480px) {
+
+        #exitnav {
+            position: fixed;
+            top: 30%;
+            left: 80%;
+            width: 20%;
+            z-index: 1000;
+            text-align: center;
+            font-weight: 500;
+            text-transform: uppercase;
+            background: #d8de3a;
+            transform: rotate(90deg);
+            transform-origin: right top 0;
+            font-size: 12px;
+            color: #444444;
+
+            line-height: 1.6em;
+            padding-top: 4px;
+            height: 2em;
+        }
+
+        #exitnav:hover,
+        #exitnav:focus {
+            background-color: #bec421;
+            border-color: rgba(0, 0, 0, 0.16);
+        }
+
+    /*/////Infowindow CSS /////////////////////////////////////////////*/
+
+        .tooltip_text {
+            font: normal 14px / 18px 'Lato', sans-serif !important;
+            color: #25283D;
+        }
+        .chart_text {
+            font-size: 16px;
+            line-height: 20px;
+            background: none;
+            color: #25283D;
+        } 
+
+        .instruction {
+            font: normal 14px / 18px 'Lato', sans-serif !important;
+            color: #25283D;
+        }
+
+        .tooltip_heading {
+            font-size: 32px;
+            font-weight: 500;
+            line-height: 50px !important;
+            color: #25283D;
+        }
+
+        #allH1 {
+            color: #ffa902;
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 30px;
+            margin: 25px 0 15px 0;
+        }
+
+        #arrivingH1 {
+            color: #b6006c;
+            font-size: 20px;
+            line-height: 30px;
+            font-weight: 500;
+            margin: 25px 0 15px 0;
+        }
+
+        #leavingH1 {
+            color: #2D7D9E;
+            font-size: 20px;
+            line-height: 30px;
+            font-weight: 500;
+            margin: 25px 0 15px 0;
+        }
+
+        #instructionAllH1 {
+            color: #ffa902;
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 40px;
+            margin: 25px 0 15px 0;
+        }
+
+        #instructionArrivingH1 {
+            color: #b6006c;
+            font-size: 20px;
+            line-height: 40px;
+            font-weight: 500;
+            margin: 25px 0 15px 0;
+        }
+
+        #instructionLeavingH1 {
+            color: #2D7D9E;
+            font-size: 20px;
+            line-height: 40px;
+            font-weight: 500;
+            margin: 25px 0 15px 0;
+        }
+
+        #spaces {
+            color: #25283D;
+            font-size: 18px;
+            line-height: 20px;
+            font-weight: 500;
+        }
+
+        #helplinecalls {
+            color: #25283D;
+            font-size: 18px;
+            line-height: 20px;
+            font-weight: 500;
+        }
+
+        #arriving {
+            color: #b6006c;
+            font-size: 18px;
+            line-height: 20px;
+            font-weight: 500;
+        }
+
+
+        #leaving {
+            color: #2D7D9E;
+            font-size: 18px;
+            line-height: 20px;
+            font-weight: 500;
+        }
+
+
+        #astrix {
+            line-height: 15px;
+            font-size: 10px;
+
+        }
+        #astrix2 {
+            line-height: 15px;
+            font-size: 10px;
+        }
+
+        #leavingAstrix {
+            color: #2D7D9E;
+            font-size: 16px;
+        }
+
+        #arrivingAstrix {
+            color: #b6006c;
+            font-size: 16px;
+        }
+
+        #in {
+            font-color: #b6006c;
+            fill: #b6006c;
+        }
+
+        .chart_text {
+            font-size: 16px;
+            line-height: 20px;
+            background: none;
+            color: #25283D;
+        }
+
+        .uk-button {
+            font-size: 14px;
+        }
+
+
+}
+
+@media (min-width: 1024px) {
+
+
+     #exitnav {
+            position: fixed;
+            top: 30%;
+            left: 89%;
+            z-index: 1000;
+            text-align: center;
+            font-weight: 500;
+            text-transform: uppercase;
+            background: #d8de3a;
+            transform: rotate(90deg);
+            transform-origin: right top 0;
+            font-size: 18px;
+            color: #444444;
+            width: 11%;
+            height: 2em;
+            line-height: 1.6em;
+            padding-top: 5px;
+        }
+
+        #exitnav:hover,
+        #exitnav:focus {
+            background-color: #bec421;
+            border-color: rgba(0, 0, 0, 0.16);
+        }
+
+        .tooltip_heading {
+            font-size: 40px;
+            font-weight: 500;
+            line-height: 60px;
+            color: #25283D;
+        }
+
+        .tooltip_text {
+            font-size: 16px;
+            line-height: 30px;
+            color: #25283D;
+        }
+
+        .chart_text {
+            font-size: 16px;
+            line-height: 20px;
+            background: none;
+            color: #25283D;
+        } 
+
+        .instruction {
+            font: normal 14px / 18px 'Lato', sans-serif !important;
+            color: #25283D;
+        }
+
+        #instructionArrivingH1 {
+            color: #b6006c;
+            font-size: 30px;
+            line-height: 70px;
+            font-weight: 500;
+        }
+
+        #instructionLeavingH1 {
+            color: #2D7D9E;
+            font-size: 30px;
+            line-height: 70px;
+            font-weight: 500;
+
+        }
+
+        #instructionAllH1 {
+            color: #ffa902;
+            font-size: 30px;
+            line-height: 70px;
+            font-weight: 500;
+
+        }
+
+        #arrivingH1 {
+            color: #b6006c;
+            font-size: 30px;
+            font-weight: 500;
+        }
+
+        #leavingH1 {
+            color: #2D7D9E;
+            font-size: 30px;
+            font-weight: 500;
+
+        }
+
+        #allH1 {
+            color: #ffa902;
+            font-size: 30px;
+            font-weight: 500;
+
+        }
+
+
+        #spaces {
+            color: #25283D;
+            font-size: 22px;
+            line-height: 30px;
+            font-weight: 500;
+        }
+
+
+        #helplinecalls {
+            color: #25283D;
+            font-size: 22px;
+            font-weight: 500;
+            line-height: 28px;
+        }
+
+        #arriving {
+            color: #b6006c;
+            font-size: 22px;
+            font-weight: 500;
+        }
+
+
+        #leaving {
+            color: #2D7D9E;
+            font-size: 22px;
+            font-weight: 500;
+        }
+
+
+        #astrix {
+            line-height: 15px;
+            font-size: 12px;
+        }
+
+        #astrix2 {
+            line-height: 15px;
+            font-size: 12px;
+        }
+
+        #leavingAstrix {
+            color: #2D7D9E;
+            font-size: 20px;
+        }
+
+        #arrivingAstrix {
+            color: #b6006c;
+            font-size: 20px;
+        }
+
+        #in {
+            font-color: #b6006c;
+            fill: #b6006c;
+        }
+
+        .uk-button {
+            font-size: 14px;
+        }
+}
+
+/* Large screen and bigger */
+
+@media (min-width: 1366px) {
+
+        .tooltip_text {
+            font-size: 20px;
+            line-height: 34px;
+            color: #25283D;
+        }
+
+        .chart_text {
+            font-size: 16px;
+            line-height: 20px;
+            background: none;
+            color: #25283D;
+        }
+
+        .tooltip_heading {
+            font-size: 50px;
+            font-weight: 500;
+            line-height: 80px;
+            padding-top: 30px;
+            color: #25283D;
+        }
+
+        #spaces {
+            color: #25283D;
+            font-size: 28px;
+            font-weight: 500;
+        }
+
+
+        #helplinecalls {
+            color: #25283D;
+            font-size: 28px;
+            font-weight: 500;
+        }
+        #instructionArrivingH1 {
+            color: #b6006c;
+            font-size: 34px;
+            line-height: 70px;
+            font-weight: 500;
+            padding-top: 15px;
+        }
+
+        #instructionLeavingH1 {
+            color: #2D7D9E;
+            font-size: 34px;
+            line-height: 70px;
+            font-weight: 500;
+            padding-top: 15px;
+        }
+
+        #instructionAllH1 {
+            color: #ffa902;
+            font-size: 34px;
+            line-height: 70px;
+            padding-top: 15px;
+            font-weight: 500;
+        }
+
+        #arrivingH1 {
+            color: #b6006c;
+            font-size: 34px;
+            line-height: 70px;
+            font-weight: 500;
+            padding-top: 15px;
+        }
+
+        #leavingH1 {
+            color: #2D7D9E;
+            font-size: 34px;
+            line-height: 70px;
+            font-weight: 500;
+            padding-top: 15px;
+        }
+
+        #allH1 {
+            color: #ffa902;
+            font-size: 34px;
+            line-height: 70px;
+            padding-top: 15px;
+            font-weight: 500;
+        }
+
+        #arriving {
+            color: #b6006c;
+            font-size: 28px;
+            font-weight: 500;
+        }
+
+        #leaving {
+            color: #2D7D9E;
+            font-size: 28px;
+            font-weight: 500;
+        }
+
+
+        #astrix {
+            line-height: 15px;
+            font-size: 12px;
+        }
+        #astrix2 {
+            line-height: 15px;
+            font-size: 12px;
+        }
+
+        #leavingAstrix {
+            color: #2D7D9E;
+            font-size: 20px;
+        }
+
+        #arrivingAstrix {
+            color: #b6006c;
+            font-size: 20px;
+        }
+
+        #in {
+            font-color: #b6006c;
+            fill: #b6006c;
+        }
+
+}
+ /*/////charts CSS /////////////////////////////////////////////*/
+#charts {
+        margin: 0 5% 5% 5%;
+        font-family: 'Raleway', sans-serif;
+      
+background: #e6f9ff;
+            overflow: hidden;
+            width: 160%;
+ 
+            left: -35%;
+            right:35%;
+
+            /* This is for the Map container to be a fixed ratio */
+            position: relative;
+            padding-bottom: 10%;
+            height: 10;
+}
+
+      text {
+        fill: #000;
+        font-family: 'Raleway', sans-serif;
+        font-size: 18px;
+        pointer-events: none;
+      }
+
+
+      .node {
+        cursor: pointer;
+      }
+
+      .node circle {
+        stroke: #E80614;
+        fill: #a6cee3;
+        stroke-width: 1px
+      }
+
+      .node text {
+        font-size: 18px;
+        font-family: 'Raleway', sans-serif;
+      }
+
+      .link {
+        fill: none;
+        stroke: #1f78b4;
+        stroke-width: 2px;
+      }
+
+
+      .d3-tip {
+      line-height: 1;
+      font-weight: bold;
+      font-family: 'Raleway', sans-serif;
+      padding: 12px;
+      background: rgba(0, 0, 0, 0.8);
+      color: #fff;
+      border-radius: 2px;
+      }
+
+      /* Creates a small triangle extender for the tooltip */
+      .d3-tip:after {
+        box-sizing: border-box;
+        display: inline;
+        font-size: 8px;
+        width: 100%;
+        line-height: 1;
+        color: rgba(0, 0, 0, 0.8);
+        content: "\25BC";
+        position: absolute;
+        text-align: center;
+      }
+
+      /* Style northward tooltips differently */
+      .d3-tip.n:after {
+        margin: -1px 0 0 0;
+        top: 100%;
+        left: 0;
+      }
