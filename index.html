@@ -9,6 +9,7 @@
     <meta name="Keywords" content="Data visualisation, map, african migration, d3, Leaflet, Open Street Maps, Google APIs,  Africa's Aid, migration, Africa, World" />
     <link rel="shortcut icon" type="image/x-icon" href="img/headerLogo.PNG"/>
     <meta name="author" content="Roseline Batcha" />
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 
 
 
@@ -51,12 +52,17 @@
     <script src="https://unpkg.com/leaflet-ant-path" type="text/javascript"></script>
     <script src="http://d3js.org/d3.v3.js"></script>
     
-
+<!--cloudflare-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.6.7/d3-tip.js"></script>
+    <!---------->
+    
+    
 </head>
 <body>
 <!-- Navigation menu - for large screen -->
     <nav class="uk-navbar" data-uk-sticky="{clsactive: 'uk-navbar-attached', animation: 'uk-animation-slide-top'}">
-        <a href="" target="blank"> <img class="uk-margin-large-left" src="img/logo.png" width="150px"></a>
+        <a href="" target="blank"> <img class="uk-margin-large-left" src="img/twitter_header_photo_1_1.png" width="150px"></a>
         <div class="uk-navbar-flip">
             <ul class="uk-navbar-nav uk-hidden-medium uk-hidden-small" data-uk-scrollspy-nav="{closest: 'li', smoothscroll: {offset: 50}}">
                 <li><a href="#intro">Introduction</a></li>
@@ -91,14 +97,16 @@
 <!--  Navigation menu for exit this site -->
     <a id="exitnav" data-uk-sticky="{animation: 'uk-animation-slide-top'}" href="https://github.com/rbatcha">EXIT SITE</a>
     <div class="uk-cover">
-        <img src="img/brainDrain.png" width="100%" style="min-height: 450px;">
+        
+        
+        <img src="img/africanDream.PNG" width="100%" style="min-height: 150px;">
             <figcaption class="uk-overlay-panel uk-flex uk-flex-center uk-flex-middle uk-text-center">
 
                 <div>
             <h1 class="uk-heading-extra-large">New Age African Migration </h1>
                     <h2>Brain Drain Journeys.... </h2>
                        <h3> &amp;</h3>
-                     <h3>Brain Drain to Brain Gain ?</h3>
+                     <h2>Brain Drain to Brain Gain... ?</h2>
                     <a href="#intro" data-uk-smooth-scroll><i class="uk-icon-chevron-circle-down uk-icon-large"></i></a>
                 </div>
             </figcaption>
@@ -106,13 +114,13 @@
     </div>
        <div id="intro" class="uk-container uk-container-center uk-width-medium-8-10 uk-width-small-1-1">
             <div class="uk-panel uk-panel-box uk-width-medium-7-10 uk-margin-large-top uk-container-center" style="background: #d8de3a;">
-             <h3>  <p>Make Your Voices Heard ! Contact  <a href="mailto:roselinebatcha@gmail.com">Roseline Batcha</a> and bounce back ideas, taking this campaign to a higher level. Be an Ambassador for Change !</p> </h3>
+             <h3>  <p>Make Your Voices Heard ! Contact  <a href="mailto:roselinebatcha@gmail.com">Roseline Batcha</a> and bounce back ideas, taking this campaign to a higher level. Be an Ambassador for Change. TOGETHER LETS DO THIS..!</p> </h3>
             </div>
 
             <h1 class="uk-text-center uk-margin-large-top">Introduction</h1>
             <p class="uk-margin-large-top">
 
-                This Mobile interactive web map Application visualises the migrant movements of African to and out of Africa between the years 1995 - 2017. It is designed to illustrate how far and wide African migrants both tertiary and non- tertiary workers migrate across the world escpecially to the western countries and the Americas, seeking greener pastures. These movements termed the Brain Drain dilemmma is a huge call for concern.  
+                This interactive Mobile- Web Map Application visualises the migrant movements of Africans to and out of Africa between the years 1990 - 2017. It is designed to illustrate how far and wide African migrants both tertiary and non- tertiary workers migrate across the world especially to the western countries and the Americas, seeking greener pastures. These movements termed the Brain Drain dilemma is a huge call for concern.  
             </p>
            <p> So therefore,
 -	 What do Africans need most when it comes to reversing brain drain to brain gain?
@@ -135,7 +143,7 @@
           
 
         <div id="title" class="row">
-        <h2>NEW AGE AFRICAN MIGRATION ANIMATED MAP (1995-2017)</h2></div>             
+        <h2>NEW AGE AFRICAN MIGRATION ANIMATED MAP (1990-2017)</h2></div>             
         
         <div id="map"  ></div>
 
@@ -146,7 +154,7 @@
         <div class="uk-container uk-container-center uk-margin-large-top uk-margin-large-bottom ">
         <h3 class="uk-text-center"><a href="#findings" data-uk-smooth-scroll="{offset: 90}"><i class="uk-icon-chevron-circle-down uk-icon-large"></i></a></h3>
     </div>
-    <div id="findings" class="uk-container uk-container-center uk-width-medium-8-10 uk-width-small-1-1 uk-margin-large-top uk-block-muted">
+    <div id="findings" class="uk-container uk-container-center uk-width-medium-8-8 uk-width-small-10-10 uk-margin-large-top uk-block-muted">
 
         
 <!-- /////////////////////////////////////////////////////////////////////-->
@@ -156,199 +164,16 @@
         
         
         
-        <h1 class="uk-text-center uk-margin-bottom uk-margin-large-top">Multi-Series Interactive Charts</h1>
+        <h1 class="uk-text-center uk-margin-bottom uk-margin-large-top">African Emigration 1990 - 2017 via D3 Node Tree</h1>
+        <h3><p>Click on the white circles to expand. Click again on the now-filled circle to retract. Hover over circles for more information. </p></h3>
+        <h3>Total Population of African migrants to other parts of the world</h3>
         <h2 class="uk-margin-large-top"></h2>
-         <div id="charts"  ></div>
-            <p class="uk-margin-large-top">
-                 aaaaaaaddddddddddddddddddddddddddd
-                dddddddddddddddddddd
-                ddddddddddddddddddddddddddddddddddddddddddddddd. <b> aaaaaaadddddddddddddddddddddddddddddddddddddddddddddddd
-                ddddddddddddddddddddddddddddddddddddddddddddddddddddddd.</b>  aaaaaaadddddddddddddddddddddddddddddddddddddddddddddddd
-                ddddddddddddddddddddddddddddddddddddddddddddddddddddddd., <b> aaaaaaaddddddddddddddddddddddddddddddddddddddddddddddddd
-                dddddddddddddddddddddddddddddddddddddddddddddddddddddd.</b>  aaaaaaadddddddddddddddddddddddddddddddddddddddddddddddd
-                dddddddd.
-            </p>
-            <p>
-                 aaaaaaadddddddddddddddddddddddddddddddddddddddddddddd
-                ddddddddddddddddddddddddddddddddddddddddddddddddddddddd
-                ddddddddddddddddddddddddddddddddddddddddddddddddddddddd
-                dddddddddd.
-            </p>
-            <p class="uk-margin-large-bottom">
-                Overall, <b>93%</b> o aaaaaaaddddddddddddddddd
-                ddddddddddddddd
-                ddddddddddddddddd
-                dddddddd
-            </p>
+         
 
-                <blockquote data-uk-scrollspy="{cls:'uk-animation-slide-right'}">
-                    <p class="uk-text-large">
-                        
-                aaaaaaaddddddddddddddddddddddddddddddddddddddddddd
-                        dddddddddddddddddddddddddddddddddddddddddd
-                        dddddddddddddddddddddddddddddddddddddddd
-                        ddddddddddddddddddddddddddddddddddddddddd.
-                    </p>
-                </blockquote>
-
-        <h2 class="uk-margin-large-top">Migrant movements are diverse</h2>
-            <p class="uk-margin-large-top">
-<div id="charts"  ></div>
-                On average in 2015-16, there were journeys from each African country to  otherparts of the World. <a href="#figure1" data-uk-smooth-scroll="{offset: 90}">Figure 1 </a> shows their diversity, highlighting reciprocal migration patterns between many countries.
-        
-            <p>
-
-                aaaaaaaddddddddddddddddddddddddddddddddddddddddddddddd
-                dddddddddddddddddddddddddddddddddddddddddddddddddddddd
-                ddddddddddddddddddddddddddddddddddddddddddddddddddddddd
-                dddddddddd.
-                </p>
-                <p class="uk-margin-large-bottom">
-                 aaaaaaadddddddddddddddddddddddddddddddddddddddddddddd
-                    dddddddddddddddddddddddddddddddddddddddddddddddddd
-                    dddddddddddddddddddddddddddddddddddddddddddddddddddd
-                    dddddddddddddddddd.
-
-                <blockquote class="uk-margin-top uk-margin-bottom" data-uk-scrollspy="{cls:'uk-animation-slide-right'}">
-                    <p class="uk-text-large">
-                         aaaaaaadddddddddddddddddddddddddddddddddddddd
-                        ddddddddddddddddddddddddddddddddddddddddddddddd
-                        ddddddddddddddddddddddddddddddddddddddddddddddd
-                        dddddddddddddddddddddddddddddddddd.
-                    </p>
-                </blockquote>
-           
-
-                <figure id="figure1" class='uk-align-center uk-margin-large-top uk-width-6-10'>
-                    <a href="img/allLondonRoutes.png" data-uk-lightbox title="Figure 1: All migration routes to seek refuge across London">
-                    <img src="img/allLondonRoutes.png" width="700" height="600" alt=""></a>
-                    <figcaption class="uk-text-center uk-text-small">Figure 1:  aaaaaaadddddddddddddddddddddddddddddddddddddd
-                        dddddddddddddddddddddddddddddddddddddddd
-                        dddddddddddddddddddddddddddd.</figcaption>
-                </figure>
-            <p>
-
-            </p>
-
-        <h2 class="uk-margin-large-top"> aaaaaaaddddddddddddd
-            ddddddddddddd
-            dddddddddddddddddddddddddd
-            ddddddddddddd</h2>
-            <p class="uk-margin-large-top">
-                 aaaaaaadddddddddddddddddddddddddddddddddddddddddddddd
-                ddddddddddddddddddddddddddddddddddddddddddddddddddddd
-                dddddddddddddddddddddddddddddddddddddddddddddddddddddd
-                ddddddddddddd. <a href="#figure2" data-uk-smooth-scroll="{offset: 90}">Figure 2 </a>  aaaaaaadddddddddddddddddddddddddddddddddddddddddddddd
-                dddddddddddddddddddddddddddddddddddddddddddddddddddd
-                dddddddddddddddddddddddddddddddddddddddddddddddddd
-                dddddddddddddddddd.
-            </p>
-
-            <p class="uk-margin-large-bottom">
-                 aaaaaaadddddddddddddddddddddddddddddddddddddddddddd
-                dddddddddddddddddddddddddddddddddddddddddddddddddddddd
-                ddddddddddddddddddddddddddddddddddddddddddddddddddddd
-                ddddddddddddddd.<a href="http://" target="blank">Bocddfdfffff 2015</a>  aaaaaaaddddddddddddddddddddddddddddddddddddddd
-                dddddddd
-                ddddddddddddddddddddddddddddddddddddddddddddddddddddddd
-                ddddddddddddddddddddddddddddddddddddddddddddddddddd
-                ddddddddddddd.
-            </p>
-                <blockquote data-uk-scrollspy="{cls:'uk-animation-slide-right'}">
-                    <p class="uk-text-large">
-                         aaaaaaadddddddddddddddddddddddddddddddddddd
-                        dddddddddddddddddddddddddddddddddddddddddd
-                        dddddddddddddddddddddddddddddddddddddddddd
-                        dddddddddddddddddddddddddddddddddddddddddddddd.
-                    </p>
-                </blockquote>
-                <div id="figure2" class="uk-container uk-container-center uk-margin-large-top uk-margin-large-bottom">
-<!--                 <h3>Figure 1: <br> aaaaaaaddddddddddddddddddddddddddddddddddd
-dddddddddddddddddddddd
-dddddddddddddddddddddddddddddddddddddddddddddd
-dddddddddddddd
-ddddddddddddddddddddddddddddddddddddddddddddddddd.</h3> -->
-                <div class="uk-grid uk-grid-width-medium-1-4" data-uk-grid-margin>
-                    <div>
-                        <a href="img/logo.png" data-lightbox-type="image" data-uk-lightbox="{group:'group1'}" title="Bexley">Bggggggg
-                            <img src="img/logo.png" width="800" height="600" alt="">
-                        </a>
-                    </div>
-                      <div>
-                        <a href="img/logo.png" data-lightbox-type="image" data-uk-lightbox="{group:'group1'}" title="Croydon">Cfffffff
-                            <img src="img/logo.png" width="800" height="600" alt="">
-                        </a>
-                    </div>
-                    <div>
-                        <a href="img/logo.png" data-lightbox-type="image" data-uk-lightbox="{group:'group1'}" title="Enfield">Enfield
-                            <img src="img/logo.png" width="800" height="600" alt="">
-                        </a>
-                    </div>
-                    <div>
-                        <a href="img/WestminsterWeb.png" data-lightbox-type="image" data-uk-lightbox="{group:'group1'}" title="Westminster">Wggggggg
-                            <img src="img/Wlogo.png" width="800" height="600" alt="">
-                        </a>
-                    </div>
-
-                </div>
-                <h3>Figure 2:  aaaaaaadddddddddddddddddddddd
-                    dddddddddddddddd
-                    dddddddddddddddddddddddddddddddddddddddddd
-                    ddddddddddddddddddddddddddddddddddddddddddddd
-                    ddddddddddddddddddddddddddddddddddddddddd.)</h3>
-                </div>
+               <div id="charts"></div>
 
 
-         <h2 class="uk-margin-large-top"> aaaaaaadddddddddddddddddddddddddddddddd
-             dddddddddddddddd
-             ddddddddddddddddddddddddddddddddddddddd
-             ddddddddddddd
-             ddddddddddddddddddddddddddddddddddddddd
-             dddddddddddd
-             ddddddddddddddd.</h2>
-                       <p class="uk-margin-large-top">
-                In total, there were <b>5399</b> c 
-                           aaaaaaadddddddddddddddddddddddddddddd
-                           ddddddddddddddddddddddddddddddddddddddd
-                           ddddddddddddddddddddddddddddddddddddddd
-                           dddddddddddddddddddddddddddddddddddddddd
-                           dddddddddddddddddd.
-            </p>
-            <p>
-                 aaaaaaaddddddddddddddddddddddddddddddddddddddd
-                ddddddddddddddddddddddddddddddddddddddddddddddd
-                ddddddddddddddddddddddddddddddddddddddddddddd
-                ddddddddddddddddddddddddddddddddddd.
-            </p>
-            <p> class="uk-margin-large-bottom">
-                 aaaaaaadddddddddddddddddddddddddddddddddddddd
-                dddddddddddddddddddddddddddddddddddddddddddddd
-                dddddddddddddddddddddddddddddddddddddddddddddd
-                dddddddddddddddddddddddddddddddddddd. below the <a href="https://" target="blank" target="blank">   aaaaaaaddddddddddddddddddddddddddddddddddddddd
-                ddddddddddddddddddddddddddddddddddddddddddddd
-                ddddddddddddddddddddddddddddddddddddddddddddd
-                ddddddddddddddddddddddddddddddddddddd. <b>812</b>  aaaaaaadddddddddddddddddddddddddddddddddddddd
-            ddddddddddddddddddddddddddddddddddddddddddddddddddd
-                dddddddddddddddddddddddddddddddddddddddddddd
-                ddddddddddddddddddddddddddddddddd.
-      
-
-                <blockquote data-uk-scrollspy="{cls:'uk-animation-slide-right'}">
-                    <p class="uk-text-large">
-                         aaaaaaaddddddddddddddddddddddddddd
-                        ddddddddddddddddddddddddddddddddddddddd
-                        dddddddddddddddddddddddddddddddddddddddddd
-                        ddddddddddddddddddddddddddddddddddddddd
-                        ddddddddddddddddddd.
-                    </p>
-                </blockquote>
-
-            <p class="uk-text-small uk-margin-large-bottom">
-                aaaaaaadddddddddddddddddddddddddddddddddddddddd
-                dddddddddddddddddddddddddddddddddddddddddddddddd
-                ddddddddddddddddddddddddddddddddddddddddddddddddd
-                ddddddddddddddddddddddddddddd.
-            </p>
+        </div>
 
 
 <!-- /////////////////////////////////////////////////////////////////////-->
@@ -759,7 +584,7 @@ Brain drain can be extremely harmful if you live in an African nation with a lim
                 <h1>Africans:How do we reverse brain drain to brain gain? </h1>
                 <p>
                    The number of African migrants has grown more than 50% in the past 10 years, more than any other region in the world. The causes are complex and varied from wars and political instability to the attraction of better wages and greater opportunities abroad.
-                </p>
+                </p>  
                 <p>
                     Discussions of Africa’s brain drain have focused on the health sector
 
@@ -880,34 +705,16 @@ And, there are hopeful signs in parts of Africa that trends are improving. South
     </div>
     </div>
 
-
-
-<!-- Load the Map  -->
    
-         
-         <script src="lib/script.js"></script>
+  <!-- Load the Map  -->
+    <script type="text/javascript" src="lib/script.js"></script>       
         
+    <!-- Load the Chart  -->
+    <script type="text/javascript" src="lib/chart.js"></script>    
         
 <!-- Share on Facebook -->
-    <div id="fb-root"></div>
-    <script>(function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s); js.id = id;
-      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.7";
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));</script>
-
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-      ga('create', 'UA-84854107-1', 'auto');
-      ga('send', 'pageview');
-
-    </script>
+   
+   
 
 </body>
 </html>

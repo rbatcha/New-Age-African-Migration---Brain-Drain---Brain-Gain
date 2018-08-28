@@ -1,0 +1,166 @@
+{
+	"name": "African Emigration",
+	"children": 
+
+	[
+
+        {"name": "Africa",
+				"children":
+			[{"name": "Algeria", "departure": 3707954},
+
+			{"name": "Botswana", "departure":184831},
+			{"name": "Cape Verde", "departure": 36},
+			{"name": "Central African Republic", "departure": 127},
+             {"name": "Burkina Faso", "departure": 4150652},
+             {"name": "Cameroon", "departure": 903397},
+            {"name": "Central African Republic", "departure": 952329},
+              {"name": "Chad", "departure": 867136},
+              {"name": "Congo", "departure": 2936015},
+			{"name": "DR Congo", "departure": 2410975},
+			{"name": "Egypt", "departure": 10088480},
+			{"name": "Eritrea", "departure": 1970539},
+             {"name": "Ethiopia", "departure": 2840758},
+			{"name": "Gabon", "departure": 173},
+			{"name": "Ghana", "departure": 206},
+			{"name": "Guinea", "departure": 2048311},
+			{"name": "Lesotho", "departure": 882512},
+             {"name": "Liberia", "departure": 1260728},
+			{"name": "Libya", "departure": 707654},
+			{"name": "Madagascar", "departure": 294208},
+			{"name": "Mali", "departure": 2751317},
+			{"name": "Mauritania", "departure": 309379},
+			{"name": "Mauritius", "departure": 370455},
+			{"name": "Rwanda", "departure": 2469030},
+			{"name": "Sierra Leone", "departure": 1315716},
+			{"name": "Somalia", "departure": 4410805},
+            {"name": "South Africa", "departure": 2171850},
+			{"name": "Sudan", "departure": 4707867},
+             {"name": "Tanzania", "departure": 1707867},
+            {"name": "Togo", "departure": 1090601},
+			{"name": "Uganda", "departure": 2712765},
+			{"name": "Zambia", "departure": 816496},
+              {"name": "Zimbabwe", "departure": 4072289}
+			]
+		},
+        
+        {"name": "North America", 
+			"children":
+				[{"name": "Canada", "departure": 610187},
+				{"name": "United States", "departure": 1910337}
+				]	
+		},
+        
+		{"name": "Europe",
+				"children":
+			[{"name": "Austria", "departure": 15082},
+			{"name": "Belgium", "departure": 10827},
+			{"name": "Bosnia & Herzegovina", "departure": 20},
+			{"name": "Bulgaria", "departure": 1039},
+			{"name": "Czech Republic", "departure": 7587},
+			{"name": "Denmark", "departure": 12225},
+			{"name": "Finland", "departure": 8735},
+			{"name": "France", "departure": 85704},
+			{"name": "Germany", "departure": 88759},
+			{"name": "Greece", "departure": 5303},
+			{"name": "Hungary", "departure": 17074},
+			{"name": "Iceland", "departure": 581},
+			{"name": "Ireland", "departure": 9863},
+			{"name": "Italy", "departure": 105742},
+			{"name": "Luxembourg", "departure": 759},
+			{"name": "Malta", "departure": 261},
+			{"name": "Netherlands", "departure": 52681},
+			{"name": "Norway", "departure": 9863},
+			{"name": "Poland", "departure": 1622},
+			{"name": "Portugal", "departure": 12051},
+			{"name": "Romania", "departure": 4222},
+			{"name": "Serbia", "departure": 423},
+			{"name": "Slovakia", "departure": 875},
+			{"name": "Slovenia", "departure": 976},
+			{"name": "Spain", "departure": 164357},
+			{"name": "Sweden", "departure": 26285},
+			{"name": "Switzerland", "departure": 14142},
+			{"name": "United Kingdom", "departure": 115926}
+			]
+		},
+
+
+		{"name": "Former Soviet Union", 
+			"children":
+			[{"name": "Azerbaijan", "departure": 319},
+			{"name": "Estonia", "departure": 136},
+			{"name": "Georgia", "departure": 77},
+			{"name": "Kazakhstan", "departure": 5923},
+			{"name": "Kyrgyzstan", "departure": 154},
+			{"name": "Latvia", "departure": 404},
+			{"name": "Lithuania", "departure": 399},
+			{"name": "Moldova", "departure": 246},
+			{"name": "Russia", "departure": 47149},
+			{"name": "Turkmenistan", "departure": 206},
+			{"name": "Uzbekistan", "departure": 1058}]
+
+		},
+
+		{"name": "East Asia",
+				"children":
+				[{"name": "Hong Kong", "departure": 962784},
+				{"name": "Japan", "departure": 441263},
+				{"name": "Macao", "departure": 133544},
+				{"name": "Mongolia", "departure": 8233},
+				{"name": "North Korea", "departure": 35254},
+				{"name": "South Korea", "departure": 476065}
+				]
+		},
+
+		{"name": "Oceania", 
+			"children":
+			[{"name": "Australia", "departure": 369893},
+			{"name": "French Polynesia", "departure": 373},
+			{"name": "Guam", "departure": 676},
+			{"name": "New Caledonia", "departure": 87},
+			{"name": "New Zealand", "departure": 101865},
+			{"name": "Samoa", "departure": 11},
+			{"name": "Tonga", "departure": 90}
+			]
+
+		},
+
+		{"name": "Southeast Asia", 
+			"children":
+			[{"name": "Brunei", "departure": 248},
+			{"name": "Cambodia", "departure": 3090},
+			{"name": "Laos", "departure": 1991},
+			{"name": "Myanmar", "departure": 11605},
+			{"name": "Philippines", "departure": 20870},
+			{"name": "Singapore", "departure": 120456},
+			{"name": "Thailand", "departure": 64617},
+			{"name": "Timor-Leste", "departure": 876},
+			{"name": "Vietnam", "departure": 7482}
+			]
+
+		},
+
+
+		{"name": "South Asia", 
+			"children":
+			[{"name": "Bangladesh", "departure": 21322},
+			{"name": "Bhutan", "departure": 603},
+			{"name": "India", "departure": 600},
+			{"name": "Nepal", "departure": 14231},
+			{"name": "Sri Lanka", "departure": 48}
+			]
+
+		},
+
+		{"name": "Middle East", 
+			"children":
+			[{"name": "Cyprus", "departure": 1591},
+			{"name": "Israel", "departure": 583},
+			{"name": "Jordan", "departure": 6002},
+			{"name": "Lebanon", "departure": 3957},
+			{"name": "Turkey", "departure": 1763}
+			]
+
+		}
+
+	]
+}
